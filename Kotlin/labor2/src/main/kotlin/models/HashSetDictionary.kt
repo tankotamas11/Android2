@@ -1,19 +1,18 @@
 package models
+
 import interfaces.IDictionary
-import java.util.Dictionary
-import java.util.TreeSet
 import java.io.File
+import java.util.*
 
-
-object TreeSetDictionary: IDictionary {
+object HashSetDictionary: IDictionary {
     val words= TreeSet<String>()
 
     init {
-    File(IDictionary.FILE_NAME).readLines().forEach { add(it) }
+        File(IDictionary.FILE_NAME).readLines().forEach { TreeSetDictionary.add(it) }
     }
 
-    override fun add(dict: String): Boolean{
-        if(!find(dict)){
+    override fun add(dict: String): Boolean {
+        if (!find(dict)) {
             words.add(dict)
             return true
         }
@@ -21,7 +20,7 @@ object TreeSetDictionary: IDictionary {
     }
 
     override fun find(dict: String): Boolean {
-        if(words.find {it.contains(dict)} != null){
+        if (words.find { it.contains(dict) } != null) {
             return true
         }
         return false
@@ -29,4 +28,5 @@ object TreeSetDictionary: IDictionary {
 
     override fun size(): Int {
         return words.size
-    }}
+    }
+}
