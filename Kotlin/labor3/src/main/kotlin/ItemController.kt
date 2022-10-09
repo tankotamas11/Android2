@@ -1,6 +1,7 @@
 class ItemController {
     val itemService =ItemService()
     fun quiz(qNum: Int){
+
         val list : List<Item> = itemService.selectRandomItems(qNum)
         for (i in 1..qNum){
             println(list[i].question)

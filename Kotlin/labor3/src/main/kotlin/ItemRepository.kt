@@ -5,16 +5,21 @@ class ItemRepository() {
     val items : MutableList<Item> = mutableListOf<Item>()
 
     init {
-        val lines= File("kerdesek.txt").readLines()
+        val lines= File("kviz.txt").readLines()
         var i=0
         while(i<lines.size){
+
             val ansNum=lines[i++].toInt()
+            println("seged : $ansNum")
             val question : String=lines[i++]
+            println("seged : $question")
             val correct : Int = lines[i++].toInt()
 
             val answers= mutableListOf<String>()
+
            // var s :Int = ansNum.toInt()+ i -1
             repeat(ansNum){answers.add(lines[i++])}
+            println("seged : ${answers[0]}")
 //            for (t in i .. s){
 //                answers[t-i]=lines[t]
 //            }

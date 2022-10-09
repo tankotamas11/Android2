@@ -1,0 +1,14 @@
+4
+ket lonak hany laba van?
+2
+1. 4
+2. 8
+3. 1
+4. 5
+4
+ket embernek hany keze van?
+3
+1. 7
+2. 8
+3. 4
+4. 5
