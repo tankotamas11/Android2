@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98bdbcf1-d849-4eff-820a-f95d0e1cdfc9" name="Changes" comment="" />
+    <list default="true" id="98bdbcf1-d849-4eff-820a-f95d0e1cdfc9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +70,7 @@
       <workItem from="1664349685029" duration="4881000" />
       <workItem from="1664734573182" duration="1914000" />
       <workItem from="1664953442585" duration="1795000" />
+      <workItem from="1665562149134" duration="48000" />
     </task>
     <servers />
   </component>

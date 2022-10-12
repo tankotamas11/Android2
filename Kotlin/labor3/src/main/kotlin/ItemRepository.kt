@@ -10,7 +10,6 @@ class ItemRepository() {
         while(i<lines.size){
 
             val ansNum=lines[i++].toInt()
-            println("seged : $ansNum")
             val question : String=lines[i++]
             println("seged : $question")
             val correct : Int = lines[i++].toInt()

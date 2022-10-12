@@ -6,7 +6,7 @@ class ItemService {
     fun selectRandomItems(num: Int) : List<Item>{
         val items = mutableListOf<Item>()
         var t=0
-        println(itemRepository.items))
+        println(itemRepository.items)
         if(num>itemRepository.items.size){ return itemRepository.items}
         else {
             while (t < num) {
