@@ -23,10 +23,9 @@
         android:id="@+id/startbutton"
         android:layout_width="191dp"
         android:layout_height="61dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="460dp"
         android:text="@string/startbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -41,6 +40,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose "
+        app:layout_constraintBottom_toTopOf="@+id/startbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PersonName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

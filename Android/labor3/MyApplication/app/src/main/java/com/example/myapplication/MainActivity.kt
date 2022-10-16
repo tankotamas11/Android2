@@ -1,20 +1,38 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     val TAG= "MainActivity"
+
+    val choosephonenum=1
+    lateinit var personName : TextView
     lateinit var startButton : Button
+    lateinit var choosebtn : Button
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.i(TAG,"onCreate() called.")
-        initViewItems()
-        registerListeners()
+        startButton=findViewById(R.id.startbutton)
+        startButton.setOnClickListener { callActivity() }
+
+        personName=findViewById(R.id.PersonName)
+        choosebtn=findViewById(R.id.choose)
+        choosebtn.setOnClickListener {
+        val intent= Intent(Intent.ACTION_PICK,ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
+        startActivityForResult(intent, this.choosephonenum)
+       }
+
+
     }
 
     override fun onStart() {
@@ -46,17 +64,15 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i(TAG,"onDestroy() called.")
     }
-    private fun registerListeners(){
-        startButton.setOnClickListener{
-            intent = Intent(this, MenuActivity::class.java)
-            val bundle=intent.extras
+    private fun callActivity(){
+        val editText=findViewById<EditText>(R.id.PersonName)
+        val message=editText.text.toString()
 
-
-
-            startActivity(intent)
+        val intent = Intent(this,MainActivity2::class.java).also {
+            it.putExtra("Name",message)
+            startActivity(it)
         }
     }
-    private fun initViewItems(){
-        startButton=findViewById(R.id.startbutton)
-    }
+
+
 }
