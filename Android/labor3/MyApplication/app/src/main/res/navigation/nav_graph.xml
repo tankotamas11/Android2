@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu3">
+    <fragment
+        android:id="@+id/menu3"
+        android:name="com.example.myapplication.fragments.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu3_to_question3"
+            app:destination="@id/question3" />
+    </fragment>
+    <fragment
+        android:id="@+id/question3"
+        android:name="com.example.myapplication.fragments.Question"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" >
+        <action
+            android:id="@+id/action_question3_to_finish3"
+            app:destination="@id/finish3" />
+        <action
+            android:id="@+id/action_question3_self"
+            app:destination="@id/question3" />
+    </fragment>
+    <fragment
+        android:id="@+id/finish3"
+        android:name="com.example.myapplication.fragments.Finish"
+        android:label="fragment_finish"
+        tools:layout="@layout/fragment_finish" >
+        <action
+            android:id="@+id/action_finish3_to_menu3"
+            app:destination="@id/menu3" />
+    </fragment>
+</navigation>

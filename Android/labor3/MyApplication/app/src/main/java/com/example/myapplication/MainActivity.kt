@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.service.autofill.OnClickAction
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -29,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         choosebtn=findViewById(R.id.choose)
         choosebtn.setOnClickListener {
         val intent= Intent(Intent.ACTION_PICK,ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
-        startActivityForResult(intent, this.choosephonenum)
+        startActivity(intent)
+
+
        }
 
 
