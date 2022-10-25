@@ -6,7 +6,7 @@
     app:startDestination="@id/menu3">
     <fragment
         android:id="@+id/menu3"
-        android:name="com.example.myapplication.fragments.Menu"
+        android:name="com.example.myapplication.fragments.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/question3"
-        android:name="com.example.myapplication.fragments.Question"
+        android:name="com.example.myapplication.fragments.QuestionFragment"
         android:label="fragment_question"
         tools:layout="@layout/fragment_question" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/finish3"
-        android:name="com.example.myapplication.fragments.Finish"
+        android:name="com.example.myapplication.fragments.FinishFragment"
         android:label="fragment_finish"
         tools:layout="@layout/fragment_finish" >
         <action
