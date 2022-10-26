@@ -1,31 +1,22 @@
+class ItemService (private val itemRepository: ItemRepository){
 
-class ItemService {
-    val itemRepository = ItemRepository()
+    fun selectRandomItems(numberOfQuestions : Int) : List<Item>{
+        val questions = mutableListOf<Item>()
 
-
-    fun selectRandomItems(num: Int) : List<Item>{
-        val items = mutableListOf<Item>()
-        var t=0
-        println(itemRepository.items)
-        if(num>itemRepository.items.size){ return itemRepository.items}
-        else {
-            while (t < num) {
-                val item2 = itemRepository.randomItem()
-                if (items.size==0){items.add(item2)
-                    t++}
-                else {
-                    for (s in items) {
-                        if (!item2.question.equals(s)) {
-                            println("hell1")
-                            items.add(item2)
-                            t++
-                        }
-                    }
-                }
-
-            }
-
-            return items
+        if(numberOfQuestions > itemRepository.size()){
+            return questions
         }
+
+        while (questions.size != numberOfQuestions){
+            val item = this.itemRepository.randomItem()
+            if (!questions.contains(item)){
+                questions.add(item)
+            }
+        }
+
+        return questions
+
     }
+
+
 }

@@ -1,12 +1,8 @@
 fun main(args: Array<String>) {
-    println("Szép napot , kezdődhet a kviz jaték!")
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Megkérem adja meg hány kérdésre szeretne válaszolni" )
-    var nr :Int=readln().toInt()
-    val itemController = ItemController()
-    itemController.quiz(nr)
+        val itemController = ItemController(ItemService(ItemRepository()))
+        println("How many questions do you want to take? (Maximum is 10! )")
+        val nrOfQ = readLine()!!.trim().toInt()
+        if (nrOfQ <= 0 || nrOfQ > 10 ) println("Incorrect quantity! Bye!") else itemController.quiz(nrOfQ)
 
-
-}
+    }

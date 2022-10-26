@@ -1,41 +1,45 @@
 import java.io.File
-import kotlin.random.Random
+import java.util.*
+import java.util.concurrent.ThreadLocalRandom
 
-class ItemRepository() {
-    val items : MutableList<Item> = mutableListOf<Item>()
+class ItemRepository {
+
+    private val items = mutableListOf<Item>()
 
     init {
-        val lines= File("kviz.txt").readLines()
-        var i=0
-        while(i<lines.size){
-
-            val ansNum=lines[i++].toInt()
-            val question : String=lines[i++]
-            println("seged : $question")
-            val correct : Int = lines[i++].toInt()
-
-            val answers= mutableListOf<String>()
-
-           // var s :Int = ansNum.toInt()+ i -1
-            repeat(ansNum){answers.add(lines[i++])}
-            println("seged : ${answers[0]}")
-//            for (t in i .. s){
-//                answers[t-i]=lines[t]
-//            }
-//            i=s+1
-
-
-        val item=Item(question, answers, correct )
-        save(item)
+        val scanner = Scanner(File("Quiz.txt"))
+        while (scanner.hasNextLine()){
+            var line = scanner.nextLine()
+            if (line.isEmpty()) {
+                continue
+            }
+            if (line.toInt() > 0){
+                val nrOfAnswers = line.toInt()
+                val answersList = mutableListOf<String>()
+                var counter = 0
+                while (counter < nrOfAnswers){
+                    line = scanner.nextLine()
+                    answersList.add(line)
+                    counter++
+                }
+                val question = scanner.nextLine()
+                val answer = scanner.nextLine().toInt()
+                save(Item(question,answersList, answer))
+            }
         }
     }
-    fun randomItem():Item{
-        val randomIndex = Random.nextInt(size())
-        return items[randomIndex]
-    }
-    fun size(): Int = items.size
 
-    fun save(i:Item){
-        items.add(i)
+    fun randomItem() : Item{
+        val x = ThreadLocalRandom.current().nextInt(0, 9 + 1  )
+        return items[x]
     }
+
+    fun save(newItem:Item) {
+        items.add(newItem)
+    }
+
+    fun size() : Int{
+        return this.items.size
+    }
+
 }

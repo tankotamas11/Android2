@@ -1,19 +1,23 @@
-class ItemController {
-    val itemService =ItemService()
-    fun quiz(qNum: Int){
+class ItemController(private val itemService: ItemService) {
 
-        val list : List<Item> = itemService.selectRandomItems(qNum)
-        for (i in 1..qNum){
-            println(list[i].question)
-            list[i].answers.forEach {println(it)  }
-            val a = readln().toInt()
-            if ( a == list[i].correct){
-                println("Correct answer")
+    fun quiz(nrOFQuestions : Int) {
+        val questions = itemService.selectRandomItems(nrOFQuestions)
+        var correctAnswers = 0
+        questions.forEach { println(it.question)
+            for (i in it.answers){
+                println(i)
             }
-            else{
-                println("Sorry , correct answer is : ${list[i].answers[list[i].correct]} ")
+            print("Chose your answer: ")
+            val userAnswer = readLine()!!.trim().toInt()
+            if(userAnswer==it.correct){
+                correctAnswers++
+                println("Correct!")
+            }else{
+                println("Incorrect!")
             }
         }
+        println("You got $correctAnswers/$nrOFQuestions answers correct!")
 
     }
+
 }
