@@ -24,31 +24,32 @@
 
 
     <RadioGroup
+        android:id="@+id/radio"
         android:layout_width="match_parent"
         android:layout_height="258dp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp">
 
         <RadioButton
-            android:id="@+id/radioButton1"
+            android:id="@+id/R1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/R2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/R3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/R4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
@@ -60,10 +61,21 @@
         android:id="@+id/nextQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="next"
+        android:text="Next"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginTop="90dp" />
+
+    <Button
+        android:id="@+id/submitQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="0dp" />
+
+
 
 
 

@@ -1,7 +1,9 @@
 package com.example.myapplication.fragments
 
 import android.app.Activity
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +11,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.databinding.FragmentMenuBinding
+import com.example.myapplication.viewmodels.QuizVM
 
 
 class MenuFragment : Fragment() {
@@ -20,7 +24,8 @@ class MenuFragment : Fragment() {
 
 private lateinit var textView :TextView
 private lateinit var startbttn:Button
-
+private val viewmodel:QuizVM by activityViewModels()
+    val TAG= "Menufragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,12 +35,23 @@ private lateinit var startbttn:Button
 
         val nexfragment = QuestionFragment()
         bind.startbutton.setOnClickListener {
+            var tag=bind.PersonName.text
 
+            if(tag.toString().equals("")){
+                Toast.makeText(activity, "Name is empty", Toast.LENGTH_SHORT).show()
+            }
+            else {
 
-            fragmentManager?.beginTransaction()?.apply {
-                replace(R.id.container_fragment,nexfragment, QuestionFragment::class.java.simpleName)
-                    .addToBackStack(null)
-                    .commit()
+                viewmodel.setUserName(tag.toString())
+                fragmentManager?.beginTransaction()?.apply {
+                    replace(
+                        R.id.container_fragment,
+                        nexfragment,
+                        QuestionFragment::class.java.simpleName
+                    )
+                        .addToBackStack(null)
+                        .commit()
+                }
             }
         }
 
