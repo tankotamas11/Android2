@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74d8df14-55d9-4a9b-906b-c4d1ed06f6d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/fragments/MenuFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/fragments/MenuFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/fragments/QuestionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/fragments/QuestionFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/res/layout/fragment_question.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/res/layout/fragment_question.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/fragments/NewQuestionFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/res/layout/fragment_new_question.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/viewmodels/QuizVM.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/labor3/MyApplication/app/src/main/java/com/example/myapplication/viewmodels/QuizVM.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ItemController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ItemController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ItemRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ItemRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ItemService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ItemService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +64,8 @@
       <workItem from="1664954348146" duration="6976000" />
       <workItem from="1665562214356" duration="489000" />
       <workItem from="1666715549310" duration="432000" />
+      <workItem from="1667979824919" duration="300000" />
+      <workItem from="1668001670925" duration="122000" />
     </task>
     <servers />
   </component>

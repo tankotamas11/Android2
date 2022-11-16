@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <LinearLayout
         android:id="@+id/container_fragment"
         android:orientation="vertical"
@@ -16,6 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
+
 <!--    <fragment-->
 <!--        android:id="@+id/myNavHostFragment"-->
 <!--        android:name="androidx.navigation.fragment.NavHostFragment"-->

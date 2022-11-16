@@ -39,10 +39,11 @@ class QuestionFragment : Fragment() {
         val prezent = QuestionFragment()
 
         bind.options.text=viewModel.getQuestion()
-            bind.R1.text=viewModel.getAnswer1()
-            bind.R2.text=viewModel.getAnswer2()
-            bind.R3.text=viewModel.getAnswer3()
-            bind.R4.text=viewModel.getAnswer4()
+
+            bind.R1.text=viewModel.getAnswer(1)
+            bind.R2.text=viewModel.getAnswer(2)
+            bind.R3.text=viewModel.getAnswer(3)
+            bind.R4.text=viewModel.getAnswer(4)
         if (!viewModel.isFinalQuestion()) {
             bind.submitQuestion.visibility=View.GONE
         }
