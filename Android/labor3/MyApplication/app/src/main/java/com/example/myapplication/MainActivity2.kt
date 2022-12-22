@@ -14,10 +14,8 @@ class MainActivity2 : AppCompatActivity() {
 
         val message = intent.getStringExtra("Name")
 
-        val textView = findViewById<TextView>(R.id.textView2).apply {
-            text=message
-        }
 
 
-    }
+
+
 }
