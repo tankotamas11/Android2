@@ -1,6 +1,7 @@
 package com.example.a3track.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.a3track.MenuActivity
 import com.example.a3track.MyApplication
 import com.example.a3track.R
 import com.example.a3track.model.LoginResult
@@ -80,11 +82,17 @@ class LoginFragment : Fragment() {private lateinit var loginViewModel: LoginView
                 edit.putLong("deadline", MyApplication.deadline)
                 edit.putString("email", editText1.text.toString())
                 edit.apply()
-                findNavController().navigate(R.id.action_loginFragment_to_activitiesFragment)
+
+                //val intent =   Intent (this.context, MenuActivity::class.java)
+                activity?.startActivity(Intent (activity, MenuActivity::class.java))
+                //findNavController().navigate(R.id.action_loginFragment_to_activitiesFragment)
             }
         }
 
     }
-    }
+
+
+
+}
 
 

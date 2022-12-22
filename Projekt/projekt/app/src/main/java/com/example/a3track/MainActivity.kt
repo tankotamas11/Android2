@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
         Log.i("xxx", "token: " + token)
         // @TODO - check the token's validity
         val isValid = true
-        if (!token.equals("") && isValid ) {
-            MyApplication.token = token!!
-            MyApplication.email = prefs.getString("email","")!!
-
-            controller.navigate(R.id.activitiesFragment)
-        }
+//        if (!token.equals("") && isValid ) {
+//            MyApplication.token = token!!
+//            MyApplication.email = prefs.getString("email","")!!
+//
+//            controller.navigate(R.id.profileFragment)
+//        }
     }
 }

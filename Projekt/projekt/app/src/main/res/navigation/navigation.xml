@@ -11,12 +11,21 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_activitiesFragment"
-            app:destination="@id/activitiesFragment" />
+            android:id="@+id/action_loginFragment_to_menuActivity"
+            app:destination="@id/menuActivity" />
     </fragment>
+    <activity
+        android:id="@+id/menuActivity"
+        android:name="com.example.a3track.MenuActivity"
+        android:label="activity_menu"
+        tools:layout="@layout/activity_menu" />
     <fragment
-        android:id="@+id/activitiesFragment"
-        android:name="com.example.a3track.fragments.ActivitiesFragment"
-        android:label="fragment_activities"
-        tools:layout="@layout/fragment_activities" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.a3track.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
