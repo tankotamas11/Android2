@@ -1,16 +1,23 @@
 package com.example.a3track.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.example.a3track.MyApplication
 import com.example.a3track.R
+import com.example.a3track.model.LoginResponse
+import com.example.a3track.viewmodels.UserViewModel
 
 
 class ProfileFragment : Fragment() {
+
+    private lateinit var userViewModel: UserViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,14 +37,22 @@ class ProfileFragment : Fragment() {
         button.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
         }
-        /*
-        * val editText: EditText = view.findViewById(R.id.editTextTextMultiLine)
-        userListViewModel.readUsers()
-        userListViewModel.userList.observe(viewLifecycleOwner) {
-            val userList = userListViewModel.userList.value
-            editText.setText("User list size ${userList!![15]}")
-            Log.i("xxx", userList.toString())
-        }
-        * */
+
+       // userViewModel.readUsers()
+//        userViewModel.userList.observe(viewLifecycleOwner) {
+//            val userList = userViewModel.userList.value
+//                //editText.setText("User list size ${userList!![15]}")
+//            var i:Int
+//            var k=1000
+//            var t=MyApplication.email
+//
+//            for( i in 0..userList!!.size-1){
+//            if (t.equals(userList!![i].email)){
+//                k=i
+//            }
+//        }
+//            Log.i("xxx", k.toString())
+//        }
+
     }
 }

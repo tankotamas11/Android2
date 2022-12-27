@@ -1,5 +1,6 @@
 package com.example.a3track.api
 
+import com.example.a3track.model.GetCUResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -17,4 +18,7 @@ interface TrackerApi {
 
     @GET(Constants.GET_USERS_URL)
     suspend fun getUsers(@Header("token") token: String): Response<List<User>>
+
+    @GET("/user")
+    suspend fun getCurrentUser(@Header("token") token: String): Response<GetCUResponse>
 }

@@ -22,6 +22,7 @@ import com.example.a3track.util.Constants
 import com.example.a3track.repository.TrackerRepository
 import com.example.a3track.viewmodels.LoginViewModel
 import com.example.a3track.viewmodels.LoginViewModelFactory
+import kotlin.math.log
 
 class LoginFragment : Fragment() {private lateinit var loginViewModel: LoginViewModel
     private lateinit var editText1: EditText
@@ -82,7 +83,7 @@ class LoginFragment : Fragment() {private lateinit var loginViewModel: LoginView
                 edit.putLong("deadline", MyApplication.deadline)
                 edit.putString("email", editText1.text.toString())
                 edit.apply()
-
+                Log.i("xxx", "token: " + MyApplication.token+ "  email:  "+MyApplication.email + "///")
                 //val intent =   Intent (this.context, MenuActivity::class.java)
                 activity?.startActivity(Intent (activity, MenuActivity::class.java))
                 //findNavController().navigate(R.id.action_loginFragment_to_activitiesFragment)

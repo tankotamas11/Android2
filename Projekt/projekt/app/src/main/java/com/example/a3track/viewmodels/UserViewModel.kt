@@ -34,6 +34,7 @@ class UserViewModel(val repository: TrackerRepository) : ViewModel() {
                 Log.i("xxx", e.toString())
             }
         }
+
     }
 
 
