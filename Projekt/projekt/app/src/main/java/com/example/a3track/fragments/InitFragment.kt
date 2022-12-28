@@ -28,14 +28,13 @@ class InitFragment : Fragment() {
         super.onCreate(savedInstanceState)
         val factory = CurrentUserViewModelFactory(TrackerRepository())
         currentUserViewModel = ViewModelProvider(this, factory).get(CurrentUserViewModel::class.java)
-        Log.i("yyy","jartam itt")
+        
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.i("yyy","jartam itt is")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_init, container, false)
     }
