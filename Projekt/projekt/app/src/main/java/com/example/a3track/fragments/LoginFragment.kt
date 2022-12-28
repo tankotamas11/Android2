@@ -77,13 +77,16 @@ class LoginFragment : Fragment() {private lateinit var loginViewModel: LoginView
                 ).show()
             }
             if ( it == LoginResult.SUCCESS ) {
-                val prefs = requireActivity().getPreferences(Context.MODE_PRIVATE)
+                val prefs = requireActivity().getSharedPreferences("TRACKER",Context.MODE_PRIVATE)
+
                 val edit = prefs.edit()
                 edit.putString("token", MyApplication.token)
                 edit.putLong("deadline", MyApplication.deadline)
                 edit.putString("email", editText1.text.toString())
+                edit.putString("id",MyApplication.id.toString())
                 edit.apply()
-                Log.i("xxx", "token: " + MyApplication.token+ "  email:  "+MyApplication.email + "///")
+                MyApplication.email=editText1.text.toString()
+                Log.i("xxx", "token: " + MyApplication.token+ "  email:  "+MyApplication.email+ " dedline: "+MyApplication.deadline+ "///")
                 //val intent =   Intent (this.context, MenuActivity::class.java)
                 activity?.startActivity(Intent (activity, MenuActivity::class.java))
                 //findNavController().navigate(R.id.action_loginFragment_to_activitiesFragment)

@@ -11,15 +11,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val controller = findNavController(R.id.nav_host_fragment)
 
-        // Read data from preferences
-        val prefs = this.getPreferences(MODE_PRIVATE)
-        val token = prefs.getString("token", "")
-        val id =  prefs.getInt("userId",40)
-        val deadline = prefs.getLong("deadline", 0L)
-
-        Log.i("xxx", "token: " + token+ "  id:  "+id)
-        // @TODO - check the token's validity
-        val isValid = true
+//        // Read data from preferences
+//        val prefs = this.getPreferences(MODE_PRIVATE)
+//        val token = prefs.getString("token", "")
+//        val id =  prefs.getInt("userId",40)
+//        val deadline = prefs.getLong("deadline", 0L)
+//
+//        Log.i("xxx", "token: " + token+ "  id:  "+id)
+//        // @TODO - check the token's validity
+//        val isValid = true
 //        if (!token.equals("") && isValid ) {
 //            MyApplication.token = token!!
 //            MyApplication.email = prefs.getString("email","")!!

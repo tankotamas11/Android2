@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/initFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -27,5 +27,20 @@
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_initFragment"
+            app:destination="@id/initFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/initFragment"
+        android:name="com.example.a3track.fragments.InitFragment"
+        android:label="fragment_init"
+        tools:layout="@layout/fragment_init" >
+        <action
+            android:id="@+id/action_initFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_initFragment_to_menuActivity"
+            app:destination="@id/menuActivity" />
     </fragment>
 </navigation>

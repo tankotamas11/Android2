@@ -2,6 +2,7 @@ package com.example.a3track.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.a3track.model.CurrentUser
 import com.example.a3track.model.LoginResponse
@@ -11,6 +12,12 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.lang.Character.getName
 
+
+class CurrentUserViewModelFactory(private val repository: TrackerRepository):ViewModelProvider.Factory{
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return CurrentUserViewModel(repository) as T
+    }
+}
 
 
 class CurrentUserViewModel (val repository: TrackerRepository) : ViewModel(){
@@ -61,7 +68,7 @@ class CurrentUserViewModel (val repository: TrackerRepository) : ViewModel(){
     }
 
 
-    private fun updateLoginResponse(deadline1: Long, token1: String, id1: Int) {
+    fun updateLoginResponse(deadline1: Long, token1: String, id1: Int) {
     _uiState.update { currentState -> currentState.copy(
         loginResponse = LoginResponse(id1,token1,deadline1)
     ) }

@@ -1,5 +1,6 @@
 package com.example.a3track.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -35,7 +36,15 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val button: Button = view.findViewById(R.id.logout)
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
+            val prefs = requireActivity().getSharedPreferences("TRACKER", Context.MODE_PRIVATE)
+
+            val edit = prefs.edit()
+            edit.putString("token", "")
+            edit.putLong("deadline", 0L)
+            edit.putString("email", "")
+            //edit.putString("id","0")
+            edit.apply()
+            findNavController().navigate(R.id.action_profileFragment_to_initFragment)
         }
 
        // userViewModel.readUsers()
