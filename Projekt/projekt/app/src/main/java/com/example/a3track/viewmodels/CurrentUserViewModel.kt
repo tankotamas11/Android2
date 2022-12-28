@@ -106,6 +106,13 @@ class CurrentUserViewModel  : ViewModel(){
     private fun updateLocation(newloc: String) {
     _uiState.value!!.location = newloc
     }
+     fun getLocation():String{
+     return    _uiState.value!!.location.toString();
+     }
+
+    fun getPhoneNum():String{
+        return _uiState.value!!.phone_number.toString()
+    }
 
     private fun updatePhoneNumber(newNum: String) {
     _uiState.value!!.phone_number = newNum
@@ -119,6 +126,9 @@ class CurrentUserViewModel  : ViewModel(){
     private fun updateEmail(email1: String) {
     _uiState.value!!.email = email1
 
+    }
+    fun getEmail():String{
+        return _uiState.value!!.email.toString()
     }
 
     private fun updateName(first: String, last: String) {

@@ -76,7 +76,7 @@ class ProfileFragment : Fragment() {
 //                }
 //            }
 //            name.text=userList!![currentIndex].last_name + " "+userList!![currentIndex].first_name
-//            //mentor.text="Osztián Pálma-Rozália"
+//
 //            email.text=userList!![currentIndex].email
 //            //location.text=userList!![currentIndex].location
 //        }
@@ -84,7 +84,10 @@ class ProfileFragment : Fragment() {
 
         //currentUserViewModel.getName()
         Log.i("ppp","itt vagyunk:"+currentUserViewModel.getName())
-
+        name.text=currentUserViewModel.getName()
+        email.text=currentUserViewModel.getEmail()
+        location.text=currentUserViewModel.getLocation()
+        phone.text=currentUserViewModel.getPhoneNum()
 //            val userList = userViewModel.userList.value
 //                name.setText("User list size ${userList!![39]}")
 //            var i:Int
