@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.a3track.MainActivity
@@ -17,19 +18,13 @@ import com.example.a3track.R
 import com.example.a3track.model.CurrentUser
 import com.example.a3track.repository.TrackerRepository
 import com.example.a3track.viewmodels.CurrentUserViewModel
-import com.example.a3track.viewmodels.CurrentUserViewModelFactory
 import java.util.*
 
 
 class InitFragment : Fragment() {
 
-    private lateinit var currentUserViewModel : CurrentUserViewModel
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val factory = CurrentUserViewModelFactory(TrackerRepository())
-        currentUserViewModel = ViewModelProvider(this, factory).get(CurrentUserViewModel::class.java)
-        
-    }
+    private val currentUserViewModel : CurrentUserViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

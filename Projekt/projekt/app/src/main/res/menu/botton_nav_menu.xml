@@ -2,12 +2,12 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Activities"
-        android:id="@+id/atcivities"
-        android:icon="@drawable/activities"/>
     <item android:title="My Task"
         android:id="@+id/mytask"
         android:icon="@drawable/mytask"/>
+    <item android:title="Activities"
+        android:id="@+id/atcivities"
+        android:icon="@drawable/activities"/>
     <item android:title="Groups"
         android:id="@+id/groups"
         android:icon="@drawable/group"/>

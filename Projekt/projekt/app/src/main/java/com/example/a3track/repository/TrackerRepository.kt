@@ -1,6 +1,7 @@
 package com.example.a3track.repository
 
 import com.example.a3track.api.RetrofitInstance
+import com.example.a3track.api.TrackerApi
 import com.example.a3track.model.GetCUResponse
 import retrofit2.Response
 import com.example.a3track.model.User
@@ -17,6 +18,6 @@ class TrackerRepository {
         return RetrofitInstance.api.getUsers(token)
     }
     suspend fun getCurrentUser(cuRequest: String): Response<GetCUResponse> {
-        return RetrofitInstance.api.getCurrentUser(token = cuRequest)
+        return TrackerApi.getApi()!!.getCurrentUser(token = cuRequest)
     }
 }

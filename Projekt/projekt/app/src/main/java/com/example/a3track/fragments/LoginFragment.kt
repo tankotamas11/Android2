@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.a3track.MenuActivity
@@ -20,12 +21,14 @@ import com.example.a3track.model.LoginResult
 import com.example.a3track.model.LoginRequest
 import com.example.a3track.util.Constants
 import com.example.a3track.repository.TrackerRepository
+import com.example.a3track.viewmodels.CurrentUserViewModel
 import com.example.a3track.viewmodels.LoginViewModel
 import com.example.a3track.viewmodels.LoginViewModelFactory
 import kotlin.math.log
 
 class LoginFragment : Fragment() {private lateinit var loginViewModel: LoginViewModel
     private lateinit var editText1: EditText
+    private val currentUserViewModel: CurrentUserViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +58,7 @@ class LoginFragment : Fragment() {private lateinit var loginViewModel: LoginView
 
         button.setOnClickListener {
             val email = editText1.text.toString().trim()
+            Log.i("Login",email)
             val password = editText2.text.toString().trim()
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(
@@ -77,18 +81,21 @@ class LoginFragment : Fragment() {private lateinit var loginViewModel: LoginView
                 ).show()
             }
             if ( it == LoginResult.SUCCESS ) {
+                val response=loginViewModel.getResponse()
+                currentUserViewModel.updateLoginResponse(response[2].toLong(),response[1].toString(),response[0].toInt())
+                //currentUserViewModel.getCurrentUser()
                 val prefs = requireActivity().getSharedPreferences("TRACKER",Context.MODE_PRIVATE)
 
                 val edit = prefs.edit()
-                edit.putString("token", MyApplication.token)
-                edit.putLong("deadline", MyApplication.deadline)
+                edit.putString("token",currentUserViewModel.getToken() )
+                edit.putLong("deadline", currentUserViewModel.getDeadline())
                 edit.putString("email", editText1.text.toString())
-                edit.putString("id",MyApplication.id.toString())
+                edit.putString("id",currentUserViewModel.getId().toString())
                 edit.apply()
                 MyApplication.email=editText1.text.toString()
                 Log.i("xxx", "token: " + MyApplication.token+ "  email:  "+MyApplication.email+ " dedline: "+MyApplication.deadline+ "///")
                 //val intent =   Intent (this.context, MenuActivity::class.java)
-                activity?.startActivity(Intent (activity, MenuActivity::class.java))
+                startActivity(Intent (activity, MenuActivity::class.java))
                 //findNavController().navigate(R.id.action_loginFragment_to_activitiesFragment)
             }
         }

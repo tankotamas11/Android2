@@ -21,12 +21,13 @@ class MenuActivity : AppCompatActivity() {
 
         binding=ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(ActivitiesFragment())
+        replaceFragment(TasksFragment())
         binding.bottomNavigationView.setOnItemSelectedListener {
 
             when (it.itemId){
-               R.id.atcivities -> replaceFragment(ActivitiesFragment())
+
                 R.id.mytask -> replaceFragment(TasksFragment())
+                R.id.atcivities -> replaceFragment(ActivitiesFragment())
                 R.id.groups -> replaceFragment(GroupsFragment())
                 R.id.profile -> replaceFragment(ProfileFragment())
             else -> {

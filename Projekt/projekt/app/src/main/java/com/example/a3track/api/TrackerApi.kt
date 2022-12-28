@@ -21,4 +21,9 @@ interface TrackerApi {
 
     @GET("/user")
     suspend fun getCurrentUser(@Header("token") token: String): Response<GetCUResponse>
+    companion object {
+        fun getApi(): TrackerApi? {
+            return RetrofitInstance.client?.create(TrackerApi::class.java)
+        }
+    }
 }
