@@ -95,6 +95,17 @@
                 android:text="TextView" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/editProfileBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Edit"
+            app:icon="@android:drawable/ic_menu_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

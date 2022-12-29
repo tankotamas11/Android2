@@ -24,9 +24,9 @@ import java.lang.Character.getName
 
 class CurrentUserViewModel  : ViewModel(){
     private val _uiState = MutableLiveData(CurrentUser())
-    //var usersList = MutableLiveData<List<User>>()
-
-
+//    var usersList = MutableLiveData<List<User>>()
+//
+//
 //    fun getusers(tokken:String){
 //        viewModelScope.launch {
 //        try {
@@ -102,6 +102,9 @@ class CurrentUserViewModel  : ViewModel(){
     private fun updateDepartmentId(newdep: Int) {
         _uiState.value!!.department_id = newdep
     }
+    fun getDeparment():Int{
+        return _uiState.value!!.department_id
+    }
 
     private fun updateLocation(newloc: String) {
     _uiState.value!!.location = newloc
@@ -121,6 +124,9 @@ class CurrentUserViewModel  : ViewModel(){
     private fun updateType(newtype: Int) {
     _uiState.value!!.type = newtype
 
+    }
+    fun getType():Int{
+        return _uiState.value!!.type
     }
 
     private fun updateEmail(email1: String) {

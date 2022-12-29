@@ -22,6 +22,7 @@ class LoginViewModelFactory(
 
 class LoginViewModel(val repository: TrackerRepository) : ViewModel() {
 
+
     var loginResult: MutableLiveData<LoginResult> = MutableLiveData()
     private var responseToSendBack : List<String>? = null
     fun login(request: LoginRequest) {

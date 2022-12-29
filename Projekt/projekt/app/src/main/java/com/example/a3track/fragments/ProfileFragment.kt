@@ -30,8 +30,13 @@ import com.example.a3track.viewmodels.*
 class ProfileFragment : Fragment() {
 
     private  val currentUserViewModel: CurrentUserViewModel by activityViewModels()
+    private lateinit var userListVM:UserViewModel
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val factory = UserViewModelFactory(TrackerRepository())
+        userListVM = ViewModelProvider(this, factory).get(UserViewModel::class.java)
 
-
+    }
 
 
     override fun onCreateView(
@@ -50,7 +55,7 @@ class ProfileFragment : Fragment() {
         val location:TextView = view.findViewById(R.id.profile_location)
         val phone:TextView = view.findViewById(R.id.profile_phone)
         val button: Button = view.findViewById(R.id.logout)
-        var userList = MutableLiveData<List<GetCUResponse>>()
+        //var userList1 = MutableLiveData<List<GetCUResponse>>()
         button.setOnClickListener {
             val prefs = requireActivity().getSharedPreferences("TRACKER", Context.MODE_PRIVATE)
 
@@ -62,8 +67,8 @@ class ProfileFragment : Fragment() {
             edit.apply()
             startActivity(Intent(activity,MainActivity::class.java))
         }
-//        val sharedPreferences = requireActivity().getSharedPreferences("TRACKER", Context.MODE_PRIVATE)
-//        val retrievedToken = sharedPreferences.getString("token",null)
+        val sharedPreferences = requireActivity().getSharedPreferences("TRACKER", Context.MODE_PRIVATE)
+        val retrievedToken = sharedPreferences.getString("token",null)
 //        val currentId=sharedPreferences.getString("id","").toString().toInt()
 //        currentUserViewModel.getusers(retrievedToken.toString())
 //        currentUserViewModel.usersList.observe(viewLifecycleOwner){
@@ -88,19 +93,23 @@ class ProfileFragment : Fragment() {
         email.text=currentUserViewModel.getEmail()
         location.text=currentUserViewModel.getLocation()
         phone.text=currentUserViewModel.getPhoneNum()
-//            val userList = userViewModel.userList.value
-//                name.setText("User list size ${userList!![39]}")
-//            var i:Int
-//            var k=1000
-//            var t=MyApplication.email
-//
-//            for( i in 0..userList!!.size-1){
-//            if (t.equals(userList!![i].email)){
-//                k=i
-//            }
-//        }
-//            Log.i("xxx", k.toString())
-//        }
+        val type=currentUserViewModel.getType()
+        val department=currentUserViewModel.getDeparment()
+        var k=0;
+        userListVM.readUsers(retrievedToken.toString())
+        userListVM.userList.observe(viewLifecycleOwner) {
+            val userList = userListVM.userList.value
 
+
+
+            for( i in 0..userList!!.size-1){
+            if (userList!![i].department_id==department && userList!![i].type==0){
+                k=i
+                }
+            }
+           Log.i("ddd", userList!![k].last_name)
+            mentor.text=userList!![k].last_name+" "+userList!![k].first_name
+
+        }
     }
 }
