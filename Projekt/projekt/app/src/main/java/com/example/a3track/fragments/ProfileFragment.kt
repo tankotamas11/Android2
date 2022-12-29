@@ -105,6 +105,8 @@ class ProfileFragment : Fragment() {
             for( i in 0..userList!!.size-1){
             if (userList!![i].department_id==department && userList!![i].type==0){
                 k=i
+
+
                 }
             }
            Log.i("ddd", userList!![k].last_name)

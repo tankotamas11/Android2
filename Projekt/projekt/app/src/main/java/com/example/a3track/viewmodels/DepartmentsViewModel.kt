@@ -5,26 +5,24 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.a3track.model.TasksResponse
-import com.example.a3track.model.User
+import com.example.a3track.model.Departments
 import com.example.a3track.repository.TrackerRepository
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
-class TasksViewModelFactory(private val repository: TrackerRepository) : ViewModelProvider.Factory{
+class DepartmentsViewModelFactory(private val repository: TrackerRepository) : ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return TasksViewModel(repository) as T
+        return DepartmentsViewModel(repository) as T
     }
 }
 
-class TasksViewModel(val repository: TrackerRepository):ViewModel() {
-    var taskList = MutableLiveData<List<TasksResponse>>()
+class DepartmentsViewModel(val repository: TrackerRepository): ViewModel() {
+    var taskList = MutableLiveData<List<Departments>>()
 
-    fun readTasks(token:String) {
+    fun readDepartments(token:String) {
         viewModelScope.launch {
             try {
                 Log.i("TTT","respones meghatarozasa elott")
-                val response = repository.getTasks(token)
+                val response = repository.getDepartments(token)
                 Log.i("TTT","respones meghatarozasa utan token:" + token)
                 if (response.isSuccessful) {
                     taskList.value = response.body()
@@ -37,7 +35,5 @@ class TasksViewModel(val repository: TrackerRepository):ViewModel() {
         }
 
     }
-
 }
-
 

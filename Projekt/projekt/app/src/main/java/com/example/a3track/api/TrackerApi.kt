@@ -15,10 +15,13 @@ interface TrackerApi {
 
     @GET(Constants.GET_USERS_URL)
     suspend fun getUsers(@Header("token") token: String): Response<List<User>>
-    @GET("/task")
+    @GET("/task/getTasks")
     suspend fun getTasks(@Header("token")token: String):Response<List<TasksResponse>>
     @GET("/user")
     suspend fun getCurrentUser(@Header("token") token: String): Response<GetCUResponse>
+    @GET("/department")
+    suspend fun getDepartments(@Header("token")token: String):Response<List<Departments>>
+
     companion object {
         fun getApi(): TrackerApi? {
             return RetrofitInstance.client?.create(TrackerApi::class.java)
