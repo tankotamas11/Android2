@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.a3track">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -15,6 +16,7 @@
         android:theme="@style/Theme.3Track"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
 
         <activity
             android:name=".MainActivity"

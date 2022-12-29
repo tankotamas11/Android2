@@ -7,8 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.a3track.MyAdapter
 import com.example.a3track.R
 import com.example.a3track.repository.TrackerRepository
 import com.example.a3track.viewmodels.DepartmentsViewModel
@@ -16,10 +20,16 @@ import com.example.a3track.viewmodels.DepartmentsViewModelFactory
 import com.example.a3track.viewmodels.TasksViewModel
 import com.example.a3track.viewmodels.TasksViewModelFactory
 
+private lateinit var adapter: MyAdapter
+private lateinit var recyclerView: RecyclerView
+
 
 class GroupsFragment : Fragment() {
 
     private lateinit var departmentsVM:DepartmentsViewModel
+    private lateinit var adapter: MyAdapter
+    private lateinit var recyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val factory= DepartmentsViewModelFactory(TrackerRepository())
@@ -44,8 +54,42 @@ class GroupsFragment : Fragment() {
         departmentsVM.taskList.observe(viewLifecycleOwner){
             Log.i("DDD","token1: " + retrievedToken.toString())
             val depart=departmentsVM.taskList.value
-            szoveg.text=depart!!.size.toString()
+            //szoveg.text=depart!!.size.toString()
             Log.i("DDD","sikeres lekerdezes")
+            var listofName= arrayListOf<String>()
+            for (i in 0..depart!!.size-1){
+                listofName.add(depart!![i].name)
+            }
+            Log.i("DDD","sikeres lista")
+            val layoutManager= LinearLayoutManager(context)
+            recyclerView=view.findViewById(R.id.recyclerView)
+
+            recyclerView.layoutManager=layoutManager
+            recyclerView.setHasFixedSize(true)
+            adapter= MyAdapter(listofName)
+            recyclerView.adapter=adapter
+
+
+
+
+
+            //listView.setAdapter(adapter)
+
+//            listView.onItemClickListener=object :OnItemClickListener{
+//                override fun onItemClick(parent: AdapterView<*>, view: View,
+//                                         position: Int, id: Long) {
+//
+//                    // value of item that is clicked
+//                    val itemValue = listView.getItemAtPosition(position) as String
+//
+//                    // Toast the values
+//                    Toast.makeText(context,
+//                        "Position :$position\nItem Value : $itemValue", Toast.LENGTH_LONG)
+//                        .show()
+//                }
+          //  }
+
+
         }
     }
 
