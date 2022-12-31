@@ -43,7 +43,7 @@ class MyAdapter(private val List : ArrayList<String>) : RecyclerView.Adapter<MyA
         val  groupName :TextView = itemview.findViewById(R.id.grouptext)
 
 
-        
+
 
     }
 }

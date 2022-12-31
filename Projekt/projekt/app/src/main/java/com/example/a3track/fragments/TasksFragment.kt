@@ -56,7 +56,7 @@ class TasksFragment : Fragment() {
         tasksVM.readTasks(retrievedToken.toString())
         tasksVM.taskList.observe(viewLifecycleOwner){Log.i("TTT","token1: " + retrievedToken.toString())
             val tasks=tasksVM.taskList.value
-            szoveg.text=tasks!!.size.toString()
+            //szoveg.text=tasks!!.size.toString()
             Log.i("TTT","sikeres lekerdezes")
         }
 
