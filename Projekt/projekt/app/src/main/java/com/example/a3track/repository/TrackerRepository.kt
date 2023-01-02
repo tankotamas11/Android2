@@ -10,6 +10,9 @@ class TrackerRepository {
     suspend fun login(request: LoginRequest): Response<LoginResponse> {
         return RetrofitInstance.api.login(request)
     }
+    suspend fun updateProfile(request: ProfileRequest): Response<LoginResponse>{
+        return  RetrofitInstance.api.updateProfile(request)
+    }
 
     suspend fun getUsers(token: String): Response<List<User>> {
         return RetrofitInstance.api.getUsers(token)

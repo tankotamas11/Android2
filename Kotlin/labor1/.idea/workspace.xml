@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cb6d7e8-b6f0-48ea-b663-3e365debd26f" name="Changes" comment="" />
+    <list default="true" id="5cb6d7e8-b6f0-48ea-b663-3e365debd26f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/model/ProfileRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/api/TrackerApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/api/TrackerApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/fragments/EditProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/fragments/EditProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/fragments/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/fragments/ProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/repository/TrackerRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/java/com/example/a3track/repository/TrackerRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/res/layout/fragment_edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/res/layout/fragment_edit_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/res/navigation/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Projekt/projekt/app/src/main/res/navigation/navigation.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +51,7 @@
       <updated>1663744966230</updated>
       <workItem from="1663744972490" duration="12007000" />
       <workItem from="1664349084065" duration="1186000" />
+      <workItem from="1672641663303" duration="169000" />
     </task>
     <servers />
   </component>

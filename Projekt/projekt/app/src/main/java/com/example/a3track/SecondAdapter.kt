@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class SecondAdapter(private val TaskList: ArrayList<TasksResponse>,val users: List<User>):RecyclerView.Adapter<SecondAdapter.SecondViewHolder>() {
+class SecondAdapter(private val TaskList: List<TasksResponse>,val users: List<User>):RecyclerView.Adapter<SecondAdapter.SecondViewHolder>() {
 
 
 

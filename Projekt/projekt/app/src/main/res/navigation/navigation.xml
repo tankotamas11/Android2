@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_profileFragment_to_initFragment"
             app:destination="@id/initFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/initFragment"
@@ -41,6 +44,18 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_initFragment_to_menuActivity"
+            app:destination="@id/menuActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.a3track.fragments.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_menuActivity"
             app:destination="@id/menuActivity" />
     </fragment>
 </navigation>
