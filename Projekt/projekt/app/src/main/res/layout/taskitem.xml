@@ -7,98 +7,119 @@
     android:paddingTop="8dp"
     android:layout_marginHorizontal="8dp"
     >
-    <LinearLayout
+
+
+    <TextView
+        android:id="@+id/taskTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Title"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/taskCreator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="Creator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/taskTitle" />
+
+    <Button
+        android:id="@+id/newTask"
+        android:layout_width="67dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="34dp"
+        android:text="New"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/taskTitle" />
+
+
+    <TextView
+        android:id="@+id/taskassigned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assigned"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskCreator" />
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskassigned"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/taskdeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Deadline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/taskpriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Priority"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/taskdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Sort Description"
+        app:layout_constraintTop_toBottomOf="@+id/taskdeadline"
         tools:ignore="MissingConstraints"
-        android:layout_marginHorizontal="8dp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/taskTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textSize="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="59dp">
+    <TextView
+        android:id="@+id/taskstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskdescription"
+        tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/taskCreator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Creator" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/taskstatus"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp" />
 
-            <Button
-                android:id="@+id/newTask"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New"
-                android:textAlignment="center" />
-
-
-        </LinearLayout>
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/taskassigned"
-            android:text="Assigned"/>
-
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="37dp">
-
-            <TextView
-                android:id="@+id/taskdeadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deadline" />
-
-            <TextView
-                android:id="@+id/taskpriority"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Priority" />
-
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/taskdescription"
-            android:text="Sort Description"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/taskstatus"
-            android:text="Status"/>
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-    </LinearLayout>
-
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:srcCompat="@drawable/line" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

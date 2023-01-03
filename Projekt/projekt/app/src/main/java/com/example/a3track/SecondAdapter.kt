@@ -31,8 +31,10 @@ class SecondAdapter(private val TaskList: List<TasksResponse>,val users: List<Us
         var i=0
         while (t){
             if(users!![i].ID==id){
-                return users!![i].last_name+ " "+ users!![i].first_name
+
+                return (users!![i].last_name+ " "+ users!![i].first_name)
             }
+            i++
         }
         return "ID problem"
     }
@@ -65,10 +67,11 @@ class SecondAdapter(private val TaskList: List<TasksResponse>,val users: List<Us
 
 
         val currentItem=TaskList[position]
+        Log.i("AAA","pozicioja: "+ currentItem.title)
 
 
         holder.title.text=currentItem.title
-        holder.creator.text=currentItem.title//Name(currentItem.created_by_user_ID)+convertLongToTime(currentItem.created_time)
+        holder.creator.text=Name(currentItem.created_by_user_ID)+" "+ convertLongToTime(currentItem.created_time)
         holder.assigned.text=Name(currentItem.asigned_to_user_ID)
         holder.tdeadline.text=convertLongToTime(currentItem.deadline)
         holder.priority.text=Priority(currentItem.priority)

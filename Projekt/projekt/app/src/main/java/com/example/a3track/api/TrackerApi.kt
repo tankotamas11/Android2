@@ -13,7 +13,7 @@ interface TrackerApi {
     @POST(Constants.LOGIN_URL)
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
     @POST("/users/updateProfile")
-    suspend fun updateProfile(@Body request: ProfileRequest):Response<LoginResponse>
+    suspend fun updateProfile(@Header("token") token:String, @Body request: ProfileRequest):Response<LoginResponse>
 
     @GET(Constants.GET_USERS_URL)
     suspend fun getUsers(@Header("token") token: String): Response<List<User>>

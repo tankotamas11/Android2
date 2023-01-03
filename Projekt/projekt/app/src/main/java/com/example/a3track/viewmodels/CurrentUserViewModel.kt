@@ -98,6 +98,9 @@ class CurrentUserViewModel  : ViewModel(){
     private fun updateImage(newimg: String) {
     _uiState.value!!.imageUrl = newimg
     }
+    fun getImage():String{
+        return _uiState.value!!.imageUrl
+    }
 
     private fun updateDepartmentId(newdep: Int) {
         _uiState.value!!.department_id = newdep
@@ -151,7 +154,14 @@ class CurrentUserViewModel  : ViewModel(){
 
 
     fun getName():String{
-        return _uiState.value!!.first_name + _uiState.value!!.last_name
+        return _uiState.value!!.first_name + " "+_uiState.value!!.last_name
     }
+    fun getFirstName():String{
+        return _uiState.value!!.first_name
+    }
+    fun getLastName():String{
+        return  _uiState.value!!.last_name
+    }
+
 
 }

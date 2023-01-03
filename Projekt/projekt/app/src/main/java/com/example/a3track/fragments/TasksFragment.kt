@@ -82,7 +82,7 @@ class TasksFragment : Fragment() {
                 val segedlista=  tasks as ArrayList<TasksResponse>
                 Log.i("TTT","userlist:"+segedlista[0].title)
                 adapter2= SecondAdapter(tasks as ArrayList<TasksResponse>,userList as ArrayList<User>)
-                //recyclerView2.adapter=adapter2
+                recyclerView2.adapter=adapter2
             }
 
             Log.i("TTT","sikeres lekerdezes")
