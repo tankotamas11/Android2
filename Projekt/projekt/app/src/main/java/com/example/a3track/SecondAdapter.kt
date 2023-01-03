@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a3track.fragments.CurrentTaskFragment
+import com.example.a3track.fragments.DepartmentFragment
 import com.example.a3track.model.Task
 import com.example.a3track.model.TasksResponse
 import com.example.a3track.model.User
@@ -77,6 +80,17 @@ class SecondAdapter(private val TaskList: List<TasksResponse>,val users: List<Us
         holder.priority.text=Priority(currentItem.priority)
         holder.description.text=currentItem.description
         holder.status.text=TaskStatus(currentItem.status)
+        holder.progress.text="%"+currentItem.progress.toString()+" "+TaskStatus(currentItem.status)
+
+        val seged=position
+        holder.itemView.setOnClickListener(object:View.OnClickListener{
+            override fun onClick(v: View?) {
+                val activity=v!!.context as AppCompatActivity
+                val nextFragment= CurrentTaskFragment(seged)
+                activity.supportFragmentManager.beginTransaction().replace(R.id.framelayout,nextFragment).addToBackStack(null).commit()
+            }
+            //Log.i("OOO","kivalasztott:" +position.toString())
+        })
 
     }
 
@@ -91,6 +105,7 @@ class SecondAdapter(private val TaskList: List<TasksResponse>,val users: List<Us
         val priority : TextView=itemview.findViewById(R.id.taskpriority)
         val status : TextView=itemview.findViewById(R.id.taskstatus)
         val description : TextView=itemview.findViewById(R.id.taskdescription)
+        val progress:TextView=itemview.findViewById(R.id.taskprogress)
 
 
 

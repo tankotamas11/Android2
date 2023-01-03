@@ -32,10 +32,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/taskTitle" />
 
-    <Button
-        android:id="@+id/newTask"
+    <TextView
+        android:id="@+id/taskstatus"
         android:layout_width="67dp"
-        android:layout_height="34dp"
+        android:layout_height="24dp"
         android:layout_marginTop="34dp"
         android:text="New"
         android:textAlignment="center"
@@ -94,7 +94,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/taskstatus"
+        android:id="@+id/taskprogress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status"
@@ -107,9 +107,9 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/taskstatus"
+        app:layout_constraintTop_toBottomOf="@+id/taskprogress"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageView
         android:id="@+id/imageView7"
